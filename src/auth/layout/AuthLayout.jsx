@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Grid, Typography } from "@mui/material";
 
-export const AuthLayout = ({ children, title = "" }) => {
+export const AuthLayout = ({ children, title }) => {
 	return (
 		<Grid
 			container
