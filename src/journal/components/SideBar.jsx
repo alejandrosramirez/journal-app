@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import {
 	Box,
@@ -15,6 +16,8 @@ import {
 import { TurnedInNot } from "@mui/icons-material";
 
 export const SideBar = ({ drawerWidth }) => {
+	const { displayName } = useSelector((state) => state.auth);
+
 	return (
 		<Box
 			component="nav"
@@ -33,7 +36,7 @@ export const SideBar = ({ drawerWidth }) => {
 			>
 				<Toolbar>
 					<Typography variant="h6" noWrap component="div">
-						Alex
+						{displayName}
 					</Typography>
 				</Toolbar>
 
@@ -48,7 +51,11 @@ export const SideBar = ({ drawerWidth }) => {
 								</ListItemIcon>
 								<Grid container>
 									<ListItemText primary={text} />
-									<ListItemText secondary={"Lorem ipsum si, si, de todos estos ejemplos, todos son información innecesaria"} />
+									<ListItemText
+										secondary={
+											"Lorem ipsum si, si, de todos estos ejemplos, todos son información innecesaria"
+										}
+									/>
 								</Grid>
 							</ListItemButton>
 						</ListItem>
