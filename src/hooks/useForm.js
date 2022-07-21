@@ -8,6 +8,10 @@ export const useForm = (value = {}, formValidations = {}) => {
 		createFormValidations();
 	}, [formState]);
 
+	useEffect(() => {
+		setFormState(value);
+	}, [value]);
+
 	const formValid = useMemo(() => {
 		for (const formValidationValue of Object.keys(formValidation)) {
 			if (formValidation[formValidationValue] !== null) {
