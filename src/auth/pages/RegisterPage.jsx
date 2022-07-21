@@ -50,7 +50,7 @@ export const RegisterPage = () => {
 
 	const isAuthenticating = useMemo(() => status === "checking", [status]);
 
-	const onSubmit = (event) => {
+	const onSubmitRegister = (event) => {
 		event.preventDefault();
 
 		setFormSubmitted(true);
@@ -64,7 +64,7 @@ export const RegisterPage = () => {
 
 	return (
 		<AuthLayout title="Registro">
-			<form onSubmit={onSubmit} className="animate__animated animate__fadeIn animate__faster">
+			<form onSubmit={onSubmitRegister} className="animate__animated animate__fadeIn animate__faster">
 				<Grid container>
 					<Grid item xs={12} sx={{ mt: 2 }}>
 						<TextField

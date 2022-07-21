@@ -32,22 +32,20 @@ export const LoginPage = () => {
 
 	const isAuthenticating = useMemo(() => status === "checking", [status]);
 
-	const onSubmit = (event) => {
+	const onSubmitLogin = (event) => {
 		event.preventDefault();
 
 		dispatch(startLoginWithEmailAndPassword(formState));
 	};
 
-	const onGoogleSignIn = () => {
-		console.log("onGoogleSignIn");
-
+	const onClickGoogleSignIn = () => {
 		dispatch(startSignInWithGoogle());
 	};
 
 	return (
 		<AuthLayout title="Login">
 			<form
-				onSubmit={onSubmit}
+				onSubmit={onSubmitLogin}
 				className="animate__animated animate__fadeIn animate__faster"
 			>
 				<Grid container>
@@ -99,7 +97,7 @@ export const LoginPage = () => {
 							<Button
 								variant="contained"
 								fullWidth
-								onClick={onGoogleSignIn}
+								onClick={onClickGoogleSignIn}
 								disabled={isAuthenticating}
 							>
 								<Google />

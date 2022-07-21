@@ -1,14 +1,14 @@
 import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
-import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material";
 import { LogoutOutlined, MenuOutlined } from "@mui/icons-material";
+import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material";
 
 import { startLogoutUser } from "../../store/auth";
 
 export const NavBar = ({ drawerWidth }) => {
 	const dispatch = useDispatch();
 
-	const onLogout = () => {
+	const onClickLogout = () => {
 		dispatch(startLogoutUser());
 	};
 
@@ -36,10 +36,10 @@ export const NavBar = ({ drawerWidth }) => {
 					alignItems="center"
 				>
 					<Typography variant="h6" noWrap component="div">
-						Jornal App
+						Journal App
 					</Typography>
 
-					<IconButton color="error" onClick={onLogout}>
+					<IconButton color="error" onClick={onClickLogout}>
 						<LogoutOutlined />
 					</IconButton>
 				</Grid>
