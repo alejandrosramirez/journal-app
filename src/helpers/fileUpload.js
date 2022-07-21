@@ -1,6 +1,6 @@
 export const fileUpload = async (file) => {
 	if (!file) {
-		throw new Error("No existe archivo a subir");
+		return null;
 	}
 
 	const cloudUrl = "https://api.cloudinary.com/v1_1/any-testing/upload";
@@ -23,6 +23,7 @@ export const fileUpload = async (file) => {
 
 		return result.secure_url;
 	} catch (error) {
-		throw new Error(error.message);
+		// throw new Error(error.message);
+		return null;
 	}
 };
