@@ -2,13 +2,13 @@ import { fileUpload } from "../../src/helpers";
 
 describe("Pruebas en fileUpload", () => {
 	test("Debe subir el archivo correctamente a cloudinary", async () => {
-		const imageUrl = "https://images.pexels.com/photos/1172253/pexels-photo-1172253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+		const imageUrl = "https://static.wixstatic.com/media/df9fb8_a598c6d40bb143ec9bfaa56b67fcadcf~mv2.jpg/v1/fill/w_1000,h_563,al_c,q_90/df9fb8_a598c6d40bb143ec9bfaa56b67fcadcf~mv2.jpg";
 
 		const response = await fetch(imageUrl);
 
 		const blob = await response.blob();
 
-		const file = new File([blob], "foto.jpg");
+		const file = new File([blob]);
 
 		const url = await fileUpload(file);
 
