@@ -1,6 +1,6 @@
 const setup = {
 	testEnvironment: "jest-environment-jsdom",
-	transformIgnorePatterns: [],
+	// transformIgnorePatterns: [],
 	setupFiles: ["./jest.setup.js"],
 	transform: {
 		"\\.[jt]sx?$": "babel-jest",

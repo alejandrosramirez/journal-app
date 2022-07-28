@@ -16,14 +16,13 @@ export const fileUpload = async (file) => {
 		});
 
 		if (!response.ok) {
-			throw new Error("No se pudo suir la imagen");
+			return null;
 		}
 
 		const result = await response.json();
 
 		return result.secure_url;
 	} catch (error) {
-		// throw new Error(error.message);
 		return null;
 	}
 };

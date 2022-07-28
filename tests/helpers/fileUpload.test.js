@@ -1,14 +1,14 @@
-import { fileUpload } from "../../src/helpers";
+import { fileUpload } from "../../src/helpers/fileUpload";
 
 describe("Pruebas en fileUpload", () => {
 	test("Debe subir el archivo correctamente a cloudinary", async () => {
-		const imageUrl = "https://static.wixstatic.com/media/df9fb8_a598c6d40bb143ec9bfaa56b67fcadcf~mv2.jpg/v1/fill/w_1000,h_563,al_c,q_90/df9fb8_a598c6d40bb143ec9bfaa56b67fcadcf~mv2.jpg";
+		const imageUrl = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/804.png";
 
 		const response = await fetch(imageUrl);
 
 		const blob = await response.blob();
 
-		const file = new File([blob]);
+		const file = new File([blob], "image.png");
 
 		const url = await fileUpload(file);
 
