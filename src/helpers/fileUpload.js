@@ -3,10 +3,10 @@ export const fileUpload = async (file) => {
 		return null;
 	}
 
-	const cloudUrl = "https://api.cloudinary.com/v1_1/any-testing/upload";
+	const cloudUrl = "https://api.cloudinary.com/v1_1/anytesting/image/upload";
 
 	const formData = new FormData();
-	formData.append("upload_preset", "journal-uploads");
+	formData.append("upload_preset", "juploads");
 	formData.append("file", file);
 
 	try {
