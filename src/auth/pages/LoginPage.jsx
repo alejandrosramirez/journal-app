@@ -47,6 +47,7 @@ export const LoginPage = () => {
 			<form
 				onSubmit={onSubmitLogin}
 				className="animate__animated animate__fadeIn animate__faster"
+				aria-label="login-form"
 			>
 				<Grid container>
 					<Grid item xs={12} sx={{ mt: 2 }}>
@@ -58,6 +59,9 @@ export const LoginPage = () => {
 							name="email"
 							value={email}
 							onChange={onChange}
+							inputProps={{
+								"data-testid": "email-field",
+							}}
 						/>
 					</Grid>
 
@@ -70,6 +74,9 @@ export const LoginPage = () => {
 							name="password"
 							value={password}
 							onChange={onChange}
+							inputProps={{
+								"data-testid": "password-field",
+							}}
 						/>
 					</Grid>
 
@@ -99,6 +106,7 @@ export const LoginPage = () => {
 								fullWidth
 								onClick={onClickGoogleSignIn}
 								disabled={isAuthenticating}
+								aria-label="google-btn"
 							>
 								<Google />
 								<Typography sx={{ ml: 1 }}>Google</Typography>
